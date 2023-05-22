@@ -13,7 +13,6 @@
       type="module"
       src="https://js.arcgis.com/calcite-components/1.0.7/calcite.esm.js"
     ></script>
-	<script src="/main_f.js"></script>
     <link
       rel="stylesheet"
       type="text/css"
@@ -21,15 +20,13 @@
     />
     <link
       rel="stylesheet"
-      href="https://js.arcgis.com/4.26/esri/themes/dark/main.css"
+      href="https://js.arcgis.com/4.26/esri/themes/light/main.css"
     />
-	<link rel="stylesheet" href="css/style_f.css"/>
-	
     <script src="https://js.arcgis.com/4.26/"></script>
     
 <body>
     <div id="viewDiv"></div>
-    <calcite-panel id="infoDiv" class="calcite-mode-dark">
+    <calcite-panel id="infoDiv" class="calcite-mode-light">
       <h3 class="heading" slot="header-content">Earthquakes since 1905</h3>
       <div id="content" style="padding: 5px">
         <calcite-label>
@@ -44,7 +41,7 @@
           <calcite-label layout="inline">
             <calcite-radio-button value="red" checked></calcite-radio-button>
             Red alert level
-          </calcite-label> 
+          </calcite-label>
           <calcite-label layout="inline">
             <calcite-radio-button value="orange"></calcite-radio-button>
             Orange alert level
