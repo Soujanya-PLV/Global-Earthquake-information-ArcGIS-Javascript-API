@@ -7,6 +7,6 @@ The project aims to provide a
 
 The virtual globe visualisation using ArcGIS Javascript API consists of the following:
   1. Visualisation of different PAGER alerts visualised from USGS.
-  2. Visualisation of the plate tectonics on the surface of the earth which adds to the understanding of the earthquake occurrence.
-  3. 
-  4. 
+  2. Visualisation of the plate tectonics on the surface of the earth which adds to the understanding of the earthquakes occurrence.
+  3. Option to select a particular earthquake obtain information such as its magnitude , location and date and be redirected to the USGS website for further study of that earthquake.
+  4. Option to search a particular place and then study the alerts that have occurred in that area.
