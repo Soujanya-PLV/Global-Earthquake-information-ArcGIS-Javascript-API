@@ -1,0 +1,23 @@
+html,
+      body,
+      #viewDiv {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+      }
+
+      #infoDiv {
+        padding: 6px;
+        width: 370px;
+        height: 96%;
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        --calcite-ui-brand: #71C96E;
+        --calcite-ui-brand-hover: #67B564;
+      }
+
+      #resultsDiv {
+        overflow: auto;
+      }

@@ -1,0 +1,68 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <title>
+      Earthquake Analysis
+    </title>
+
+    <script
+      type="module"
+      src="https://js.arcgis.com/calcite-components/1.0.7/calcite.esm.js"
+    ></script>
+	<script src="/main_f.js"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://js.arcgis.com/calcite-components/1.0.7/calcite.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://js.arcgis.com/4.26/esri/themes/dark/main.css"
+    />
+	<link rel="stylesheet" href="css/style_f.css"/>
+	
+    <script src="https://js.arcgis.com/4.26/"></script>
+    
+<body>
+    <div id="viewDiv"></div>
+    <calcite-panel id="infoDiv" class="calcite-mode-dark">
+      <h3 class="heading" slot="header-content">Earthquakes since 1905</h3>
+      <div id="content" style="padding: 5px">
+        <calcite-label>
+          <b>View earthquakes with:</b>
+        </calcite-label>
+        <calcite-radio-button-group
+          name="selectTopEarthquakes"
+          layout="vertical"
+          id="selectTopEarthquakes"
+          scale="s"
+        >
+          <calcite-label layout="inline">
+            <calcite-radio-button value="red" checked></calcite-radio-button>
+            Red alert level
+          </calcite-label> 
+          <calcite-label layout="inline">
+            <calcite-radio-button value="orange"></calcite-radio-button>
+            Orange alert level
+          </calcite-label>
+          <calcite-label layout="inline">
+            <calcite-radio-button value="yellow"></calcite-radio-button>
+            Yellow alert level
+          </calcite-label>
+          <calcite-label layout="inline">
+            <calcite-radio-button value="green"></calcite-radio-button>
+            Green alert level
+          </calcite-label>
+        </calcite-radio-button-group>
+      </div>
+      <calcite-panel id="resultsDiv">
+        <p class="heading" id="resultsHeading" slot="header-content"></p>
+        <div id="results"></div>
+      </calcite-panel>
+    </calcite-panel>
+  </body>
+</html>
