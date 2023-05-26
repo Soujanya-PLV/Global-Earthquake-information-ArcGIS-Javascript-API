@@ -93,7 +93,7 @@
 
  const layer = new GeoJSONLayer ({
           url: "https://earthquake.usgs.gov/fdsnws/event/1/query",
-          copyright: "USGS-PAGER-Earthquakes",
+          copyright: "USGS Earthquakes PAGER data",
           // Using customParameters to set the query parameters
           // get the all red alert earthquakes since 1905
           //order the results by magnitude
