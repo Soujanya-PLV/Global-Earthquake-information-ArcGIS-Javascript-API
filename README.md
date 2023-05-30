@@ -1,5 +1,5 @@
 # Global-Earthquake-information-ArcGIS-Javascript-API
-This repository has been created as a part of my 3D GIS module project.
+This repository has been created as a part of my EADG module project.
 
 ## Project description:
 The project aims to provide an enhanced understanding and effective communication of the earthquake alert information.
