@@ -32,7 +32,7 @@
    const map = new WebMap({
       basemap: ({
         baseLayers: [new TileLayer({
-          url: "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer",
+         		 url: "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer",
           })]
       }),
       ground: {
@@ -51,12 +51,8 @@
       map: map,
       alphaCompositingEnabled: true,
       environment: {
-          background: {
-              type: "color",
-              color: "#f2f0e1"
-         },
-         starsEnabled: false,
-         atmosphereEnabled: false
+         starsEnabled: true,
+         atmosphereEnabled: true
          },
          highlightOptions: {
          fillOpacity: 0,
@@ -93,7 +89,7 @@
 
  const layer = new GeoJSONLayer ({
           url: "https://earthquake.usgs.gov/fdsnws/event/1/query",
-          copyright: "USGS Earthquakes PAGER data",
+          copyright: "USGS-PAGER-Earthquakes",
           // Using customParameters to set the query parameters
           // get the all red alert earthquakes since 1905
           //order the results by magnitude
@@ -121,7 +117,7 @@
               style: "circle",
               outline: {
                   color: "red",
-                  width: 2
+                  width: 1
                        }
                      }
                   },
@@ -132,7 +128,7 @@
               style: "circle",
               outline: {
                   color: "orange",
-                  width: 2
+                  width: 1
                        }
                      }
                   },
@@ -143,7 +139,7 @@
               style: "circle",
               outline: {
                   color: "yellow",
-                  width: 2
+                  width: 1
                        }
                      }
                   },
@@ -154,7 +150,7 @@
               style: "circle",
               outline: {
                   color: "#136d15",
-                  width: 2
+                  width: 1
                        }
                      }
                   }
@@ -242,12 +238,17 @@
             "resultsHeading"
           ).innerHTML = `<b>${features.length}</b> ${layer.customParameters.alertlevel} alert level earthquakes.`;
         }
-   
+        //In order to zoom to the selected feature
+        view.popup.watch("selectedFeature", function(graphic){
+          if(graphic.layer === layer){
+            view.popup.triggerAction(0); //This calls the popup Zoom To action
+          }
+        })
+        
 map.add(layer);
 /*********************************************
 * Adding legend to the map scene
 ***********************************************/
-       
  // add a legend for the earthquakes layer
         const legendExpand = new Expand({
           expandTooltip: "Legend",
@@ -258,11 +259,10 @@ map.add(layer);
           expanded: false
         });
         view.ui.add(legendExpand, "top-left");
-     
+
  /*********************************************
  * Adding Home button to the map scene
 ***********************************************/
- 
 // Add the home button to the top left corner of the view
 		const homeBtn = new Home({
 		view,
@@ -272,7 +272,7 @@ map.add(layer);
  /*********************************************
  * Adding Search button to the map scene
 ***********************************************/
- // A. specify content with a widget
+ //specify content with a widget
    let searchWidget = new Search({
      view: view
    });
